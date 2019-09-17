@@ -1,0 +1,161 @@
+$test-border: hidden;
+
+*
+  font-family: Verdana, sans-serif
+
+ul, li
+  list-style: none
+
+.slide-container
+  display: flex
+  border: $test-border
+  border-color: blue
+  margin: 3rem 10rem 10rem
+
+.slide
+  margin: 0rem 1rem 0rem 1rem
+  overflow: hidden
+  border: $test-border
+  border-color: gray
+  ul
+    padding: 0
+    height: 20rem
+    margin-left: 0
+    width: calc(100% * 4)
+    display: flex
+    animation: slide 16s infinite // slide를 n초동안 진행하며 무한반복 함
+    border: $test-border
+    border-color: green
+  li
+    display: flex
+    width: calc(100% / 4)
+
+.carousel-image
+  height: 15rem
+  width: 20rem
+  border-radius: 1rem
+  margin-top: 2.5rem
+  margin-left: 1rem
+
+.article-container
+  display: flex
+  margin-left: 2rem
+  border: $test-border
+  border-color: red
+
+.carousel-article
+  margin: auto
+  top: 20%
+  border: $test-border
+  border-color: blue
+  > span
+    background-color: green
+    color: white
+
+@keyframes slide
+  0%
+    margin-left: 0
+
+  // 0 ~ 10  : 정지
+  10%
+    margin-left: 0
+
+  // 10 ~ 25 : 변이
+  25%
+    margin-left: -100%
+
+  // 25 ~ 35 : 정지
+  35%
+    margin-left: -100%
+
+  // 35 ~ 50 : 변이
+  50%
+    margin-left: -200%
+
+  60%
+    margin-left: -200%
+
+  75%
+    margin-left: -300%
+
+  85%
+    margin-left: -300%
+
+  100%
+    margin-left: 0
+
+
+// Next & previous buttons
+
+.prev
+  padding: 1rem
+  background-color: lightgray
+  font-weight: bold
+  color: white
+  height: 1rem
+  margin: auto 0 auto 0
+  border-radius: 1rem
+
+.next
+  padding: 1rem
+  background-color: lightgray
+  font-weight: bold
+  color: white
+  height: 1rem
+  margin: auto 0 auto 0
+  border-radius: 1rem
+  margin-right: 1rem
+
+/* Position the "next button" to the right
+
+.prev
+  margin-left: 1rem
+
+/* BELOW FOR CARD
+
+.card-container
+  display: flex
+  align-items: center
+  margin: auto
+  margin-top: 5rem
+  height: 18rem
+  width: 65rem
+  border: $test-border
+  border-color: gray
+
+.card
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  margin: auto
+  padding: 1rem
+  height: 16rem
+  width: 10rem
+  >
+    img
+      width: 5rem
+      height: 5rem
+      margin-top: 3rem
+    h3
+      margin-top: 4rem
+  &:nth-child(1)
+    background: #ffa
+  &:nth-child(2)
+    background: #faa
+  &:nth-child(3)
+    background: #afa
+  &:nth-child(4)
+    background: #2599b611
+  &:nth-child(5)
+    background: #abf
+
+.dot
+  cursor: pointer
+  height: 15px
+  width: 15px
+  margin: 0 2px
+  background-color: #bbb
+  border-radius: 50%
+  display: inline-block
+  transition: background-color 0.6s ease

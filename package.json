@@ -1,0 +1,22 @@
+{
+  "name": "membership-amazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jngsoo/membership-amazon.git"
+  },
+  "keywords": [
+    "amazon-clone"
+  ],
+  "author": "jngsoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jngsoo/membership-amazon/issues"
+  },
+  "homepage": "https://github.com/jngsoo/membership-amazon#readme"
+}
