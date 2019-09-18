@@ -11,7 +11,7 @@ class Card {
     generateDots(carousel) {
         let result = ''
         for(let i=0; i<carousel.length; i++) {
-            result += `<span class="dot" id=${i}></span>`
+            result += `<span class="dot"></span>`
         }
         return result
     }
