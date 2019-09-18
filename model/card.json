@@ -1,4 +1,4 @@
-const cards = [
+[
     {   
         "img" : "https://img.icons8.com/cotton/64/000000/cardboard-box--v1.png",
         "title" : "Ship",
@@ -7,7 +7,7 @@ const cards = [
                 "img" : "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
                 "category_name" : "PRIME ABCD EFG",
                 "title" : "THIS IS TITLE1",
-                "content" : "hasdjfk",
+                "content" : "Exclusive savings for Prime members in all US stores, 5% Back for eligible Prime members with the Amazon Prime Rewards Visa Card, and 2-hour delivery with Prime Now in select cities (more soon)Exclusive savings for Prime members in all US stores, 5% Back for eligible Prime members with the Amazon Prime Rewards Visa Card, and 2-hour delivery with Prime Now in select cities (more soon)",
                 "detail_comment" : "Learn more about Prime Rewards",
                 "detail_href" : "http://www.google.com"
             },
@@ -59,43 +59,3 @@ const cards = [
         "carousel" : []
     }
 ]
-
-import Card from './components/Card.mjs'
-import Slide from './components/Slide.mjs'
-
-const $ = element => document.querySelector(element)
-
-const cardContainer = $('.card-container')
-const carouselContainer = $('.carousel-container')
-
-cards.forEach(card => {
-    cardContainer.insertAdjacentHTML('beforeend',new Card(card.img, card.title).render())
-    card.carousel.forEach(slide => {
-
-        let newSlide = new Slide(slide.img, 
-            slide.category_name, 
-            slide.title, 
-            slide.content, 
-            slide.detail_comment, 
-            slide.detail_href)
-
-        carouselContainer.insertAdjacentHTML('beforeend',newSlide.render())
-    })
-})
-
-const prevBtn = $('.prev')
-const nextBtn = $('.next')
-const slide = $('.slide')
-
-const slideNext = () => {
-
-
-}
-const slidePrev = () => {
-
-}
-
-nextBtn.addEventListener('click', slideNext)
-nextBtn.addEventListener('click', slidePrev)
-
-

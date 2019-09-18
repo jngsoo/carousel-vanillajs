@@ -37,6 +37,7 @@ ul, li {
 
 .article-container {
   display: flex;
+  width: 40rem;
   margin-left: 2rem;
   border: hidden;
   border-color: red; }
