@@ -12,7 +12,7 @@ class Slide {
         <li>
         <img class="carousel-image" src=${this.img}>
         <div class="article-container">
-            <article class=carousel-article>
+            <article class=carousel-article aria-hidden="true">
                 <span>${this.tagName}</span>
                 <h1>${this.title}</h1>
                 <p>${this.content}</p>
