@@ -118,12 +118,37 @@ const dots = $All('.dot')
 for(let i=0; i<dots.length; i++) {
     dots[i].id = `${i}`
 }
+
+let clickedCard
+const card = $()
+const slide = $('.carousel-container')
 const prevBtn = $('.prev')
 const nextBtn = $('.next')
-const slide = $('.carousel-container')
+
 
 let page = 0
 let dotIndex = 0
+
+const expandCard = card => {
+    card.childNodes.forEach ( elem => {
+        if (elem.tagName === "SPAN") {
+            moveSlide(elem.childNodes[1].id)
+        }
+        // elem.style.width = "12rem"
+        // elem.style.height = '18rem'
+        // elem.style.marginRight = "1rem"
+        // elem.style.marginBottom = "1rem"
+    })
+
+    card.style.width = "12rem"
+    card.style.height = '18rem'
+    card.style.marginRight = "1rem"
+    card.style.marginBottom = "1rem"
+}
+const shrinkCard = card => {
+    card.style.width = "10rem"
+    card.style.height = '16rem'
+}
 
 const slideNext = () => {
     if(Math.abs(page) === numOfSlides-1) {          // 마지막 슬라이드에서 첫번째 슬라이드로 넘어가는 효과 처리
@@ -205,6 +230,7 @@ const slidePrev = () => {
     dots[dotIndex].className = 'dot-selected'
     console.log(page)
 }
+
 const moveSlide = index => {
     page = -(index)
     dots[dotIndex].className = 'dot'
@@ -218,9 +244,21 @@ const moveSlide = index => {
 nextBtn.addEventListener('click', slideNext)
 prevBtn.addEventListener('click', slidePrev)
 cardContainer.addEventListener('click', e => {
+    
     if(e.target.tagName === "SPAN") {
         moveSlide(+e.target.id)
         console.log(page)
+    }
+    else if (["card","card-container"].includes(e.target.parentNode.className)) {
+        shrinkCard(clickedCard)
+        if (e.target.className === "card") { // 이미지를 제외한 카드 부분 클릭 경우
+            expandCard(e.target)
+            clickedCard = e.target
+        }
+        else {  // 카드 내 이미지부분 클릭 경우
+            expandCard(e.target.parentNode)
+            clickedCard = e.target.parentNode
+        }
     }
 })
 
@@ -234,6 +272,8 @@ window.onkeyup = e => {
     console.log(page)
     // setInterval(slideNext,3000)
     dots[dotIndex].className = 'dot-selected'
+    clickedCard = $All('.card')[0]
+    expandCard(clickedCard)
 })()
 
 
