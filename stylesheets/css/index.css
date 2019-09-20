@@ -90,9 +90,11 @@ ul, li {
   align-items: center;
   text-align: center;
   margin: auto;
-  padding: 1rem;
   height: 16rem;
-  width: 10rem; }
+  width: 10rem;
+  border: hidden;
+  border-color: black;
+  border-radius: 0.5rem; }
   .card > img {
     width: 5rem;
     height: 5rem;
@@ -109,6 +111,9 @@ ul, li {
     background: #2599b611; }
   .card:nth-child(5) {
     background: #abf; }
+
+.card:hover {
+  cursor: pointer; }
 
 .dot {
   cursor: pointer;
