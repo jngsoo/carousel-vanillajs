@@ -41,13 +41,18 @@ ul, li {
   border: hidden;
   border-color: red; }
 
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
 .carousel-article {
   margin: auto;
   top: 20%;
   border: hidden;
   border-color: blue; }
   .carousel-article > span {
-    background-color: green;
     color: white; }
 
 .prev {
@@ -101,16 +106,6 @@ ul, li {
     margin-top: 3rem; }
   .card > h3 {
     margin-top: 4rem; }
-  .card:nth-child(1) {
-    background: #ffa; }
-  .card:nth-child(2) {
-    background: #faa; }
-  .card:nth-child(3) {
-    background: #afa; }
-  .card:nth-child(4) {
-    background: #2599b611; }
-  .card:nth-child(5) {
-    background: #abf; }
 
 .card:hover {
   cursor: pointer; }

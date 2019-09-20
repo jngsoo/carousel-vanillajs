@@ -1,8 +1,9 @@
 class Card {
-    constructor(img, title, carousel) {
+    constructor(img, title, carousel, color) {
         this.img = img
         this.title = title
         this.carousel = carousel
+        this.color = color
     }
     /**
      * 
@@ -18,7 +19,7 @@ class Card {
     render() {
         const dots = this.generateDots(this.carousel)
         return /*html*/`
-        <div class="card">
+        <div class="card" style="background-color: ${this.color};">
             <img src=${this.img}>
             <h3>${this.title}</h3>
             <span>
