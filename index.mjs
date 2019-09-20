@@ -238,7 +238,7 @@ const slideNext = () => {
         shrinkCard(clickedCard)
         expandCard(dots[dotIndex].parentNode.parentNode, false)
         clickedCard = dots[dotIndex].parentNode.parentNode
-        console.log(page)
+
 
         // 마지막 슬라이드에 그려진 첫번째 슬라이드를 지우면서 첫번째 슬라이드로 실제 이동(transition 안보이게)
         let slideList = document.getElementsByTagName('li')
@@ -262,7 +262,6 @@ const slideNext = () => {
     expandCard(dots[dotIndex].parentNode.parentNode, false)
     clickedCard = dots[dotIndex].parentNode.parentNode
     
-    console.log(page)
 }
 const slidePrev = () => {
     if(Math.abs(page) === 0) {          // 첫번째 슬라이드에서 이전 슬라이드로 넘어가는 효과 처리
@@ -284,7 +283,6 @@ const slidePrev = () => {
         shrinkCard(clickedCard)
         expandCard(dots[dotIndex].parentNode.parentNode, false)
         clickedCard = dots[dotIndex].parentNode.parentNode
-        console.log(page)
 
         // 마지막 슬라이드에 그려진 첫번째 슬라이드를 지우면서 첫번째 슬라이드로 실제 이동(transition 안보이게)
         let slideList = document.getElementsByTagName('li')
@@ -307,7 +305,7 @@ const slidePrev = () => {
     shrinkCard(clickedCard)
     expandCard(dots[dotIndex].parentNode.parentNode, false)
     clickedCard = dots[dotIndex].parentNode.parentNode
-    console.log(page)
+
 }
 
 const moveSlide = index => {
@@ -317,7 +315,7 @@ const moveSlide = index => {
     slide.style.margin = `0rem 1rem 0rem ${page*100}%`
     dotIndex = index
     dots[dotIndex].className = 'dot-selected'
-    console.log(page)
+
 }
 
 nextBtn.addEventListener('click', slideNext)
@@ -329,7 +327,6 @@ cardContainer.addEventListener('click', e => {
         expandCard(e.target.parentNode.parentNode)
         clickedCard = e.target.parentNode.parentNode
         moveSlide(+e.target.id)
-        console.log(page)
     }
     else if (["card","card-container"].includes(e.target.parentNode.className)) {
         shrinkCard(clickedCard)
@@ -351,8 +348,7 @@ window.onkeyup = e => {
 }
 
 (function init() {
-    console.log(page)
-    // setInterval(slideNext,3000)
+    setInterval(slideNext,3000)
     dots[dotIndex].className = 'dot-selected'
     clickedCard = $All('.card')[0]
     expandCard(clickedCard)
