@@ -26,13 +26,4 @@ router.get('/', function(req, res, next) {
   }
 })
 
-
-
-
-//   res.render('index', {
-//     user : null,
-//     carouselData : carouselData
-//   });
-// });
-
 module.exports = router;

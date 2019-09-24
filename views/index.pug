@@ -22,7 +22,7 @@ block content
                   span(style=`${carousel['category-color']}`)
                   h1 #{carousel['title']}
                   p #{carousel['content']}
-                  a.anchor(href=`${carousel['detail_href']}`) #{carousel['detail_comment']}
+                  a.anchor(href=`${carousel['detail_href']}` target="_blank") #{carousel['detail_comment']}
     a.next &#10095;
   script
     include ../public/javascripts/index.mjs 

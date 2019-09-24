@@ -1,10 +1,10 @@
 'use strict';
 let existId = false
-const $ = elem => {return document.querySelector(elem)};
+const $ = elem => document.querySelector(elem)
 
 function printStateMsg(location, msg, color) {
-        document.querySelector(location).style.color = color;
-        document.querySelector(location).innerHTML = msg;
+        $(location).style.color = color;
+        $(location).innerHTML = msg;
 }
 function checkId(userId){
         const id_re = /^([a-z0-9\-_]){5,20}$/g;
@@ -20,7 +20,7 @@ function checkId(userId){
         }
     }
 function checkPassword() {
-        let userPw = document.querySelector('#pw').value
+        let userPw = $('#pw').value
         const pw_re = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,16}$/g;
         let msg = '';
         let color = 'green';
@@ -51,7 +51,7 @@ function checkPassword() {
         printStateMsg('.pwState',msg,color);
     }
 function checkIfPwTwin() {
-        let userPw = document.querySelector('#pw').value
+        let userPw = $('#pw').value
         if (checkPassword()===false) {
             printStateMsg('.pwConfirmState','8~16자의 영문 대, 소문자, 숫자, 특수문자의 조합이어야 합니다.','red');
             return;
@@ -60,7 +60,7 @@ function checkIfPwTwin() {
             printStateMsg('.pwConfirmState','비밀번호를 입력하세요.','red');
             return;
         }
-        if (userPw !== document.querySelector("#pw_confirm").value) {
+        if (userPw !== $("#pw_confirm").value) {
             printStateMsg('.pwConfirmState','비밀번호가 일치하지 않습니다.','red');
         } else {
             printStateMsg('.pwConfirmState','비밀번호가 일치합니다.','green');
@@ -69,7 +69,7 @@ function checkIfPwTwin() {
     }
 function checkEmail() {
         const email_re = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z]{2,3}$/g;
-        const userEmail = document.querySelector('#email').value;
+        const userEmail = $('#email').value;
         if (userEmail === '') {
             printStateMsg('.emailState','이메일을 입력하세요.','red');
         }
@@ -82,7 +82,7 @@ function checkEmail() {
         }
     }
 function checkYear() {
-        let year = document.querySelector('#year').value;
+        let year = $('#year').value;
         if (year < 1920 || year > 2015) {
             printStateMsg('.yearState','태어난 연도 4자리를 정확하게 입력하세요.','red');
         } else {
@@ -92,7 +92,7 @@ function checkYear() {
     }
 function checkPhone() {
         const phone_re = /^[010]{3}[0-9]{7,8}$/g;
-        const userPhone = document.querySelector('#phone').value;
+        const userPhone = $('#phone').value;
         if (!phone_re.test(userPhone)) {
             printStateMsg('.phoneState','형식에 맞지 않는 번호입니다.','red');
         } else {
@@ -102,9 +102,9 @@ function checkPhone() {
     }
 function checkScrolled(window) {
         if (window.scrollHeight - window.scrollTop === window.clientHeight) {
-            document.querySelector("#agree").style.backgroundColor = 'lightblue';
-            document.querySelector("#agree").style.color = 'white';
-            document.querySelector("#agree").disabled = false;
+            $("#agree").style.backgroundColor = 'lightblue';
+            $("#agree").style.color = 'white';
+            $("#agree").disabled = false;
         }
     }
 function checkInterestLength() {
@@ -118,7 +118,7 @@ function checkInterestLength() {
         }
     }
 function checkTermAgreed() {
-        if (document.querySelector('#agreed').checked === false) {
+        if ($('#agreed').checked === false) {
             printStateMsg('.termState','이용 약관에 동의해주세요.', 'red');
             return false;
         }
@@ -127,8 +127,8 @@ function checkTermAgreed() {
     
     }
 function userAgreed() {
-            document.querySelector("#agreed").checked = true;
-            document.querySelector(".overlay").style.visibility = 'hidden';
+            $("#agreed").checked = true;
+            $(".overlay").style.visibility = 'hidden';
             checkTermAgreed();
     }
 function generateMonth() {
@@ -136,16 +136,16 @@ function generateMonth() {
         for(let i=1; i<=12; i++) {
             optionTag += `<option value="${i}월">${i}월</option>`
         }
-        document.querySelector("#month_list").innerHTML = optionTag;
+        $("#month_list").innerHTML = optionTag;
     }
 function generateDate() {
         const d30 = [4,6,9,11]
         const d31 = [1,3,5,7,8,10,12]
         let totalDates = 0;
         let optionTag = `<option selected disabled hidden>일</option>`;
-        if (d31.includes(+document.querySelector('#month_list').value[0])) {
+        if (d31.includes(+$('#month_list').value[0])) {
             totalDates = 31;
-        } else if (d30.includes(+document.querySelector('#month_list').value[0])) {
+        } else if (d30.includes(+$('#month_list').value[0])) {
             totalDates = 30;
         } else {
             totalDates = 29;
@@ -153,10 +153,10 @@ function generateDate() {
         for(let d=1; d<=totalDates; d++) {
             optionTag += `<option value="${d}일">${d}일</option>`
         }
-        document.querySelector("#date_list").innerHTML = optionTag;
+        $("#date_list").innerHTML = optionTag;
     }
 function setTermContent() {
-        document.querySelector("#termscroll").innerHTML = `
+        $("#termscroll").innerHTML = `
     정보통신망법 규정에 따라 부스트캠프에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
     
     1. 수집하는 개인정보의 항목
@@ -216,38 +216,38 @@ function setTermContent() {
             `
     }
 function popTerm() {
-        document.querySelector('.overlay').style.opacity = '1';
-        document.querySelector('.overlay').style.visibility = 'visible';
+        $('.overlay').style.opacity = '1';
+        $('.overlay').style.visibility = 'visible';
     }
 function closeTerm() {
-        document.querySelector('.overlay').style.visibility = 'hidden';
-        document.querySelector('.overlay').style.opacity = '0';
+        $('.overlay').style.visibility = 'hidden';
+        $('.overlay').style.opacity = '0';
     }
 function popReset() {
-        document.querySelector('.resetModal').style.visibility = 'visible';
-        document.querySelector('.resetModal').style.opacity = '1';
+        $('.resetModal').style.visibility = 'visible';
+        $('.resetModal').style.opacity = '1';
     }
 function closeReset() {
-        document.querySelector('.resetModal').style.visibility = 'hidden';
-        document.querySelector('.resetModal').style.opacity = '0';
+        $('.resetModal').style.visibility = 'hidden';
+        $('.resetModal').style.opacity = '0';
     }
 function wrapInterest() {
-        const userInput = document.querySelector('#interest');
+        const userInput = $('#interest');
         let tagTexts = []
         let tag = ''
         let allTags = []
         userInput.onkeyup = e => {
-            tag = document.querySelector('#interest').value;
+            tag = $('#interest').value;
             if(e.key===',' && tag !== '') {
                 tag = tag.replace(/[, ]+/g, " ").trim();    // 태그 내 콤마, 마지막 띄어쓰기 제거
                 if (tag==='' || tagTexts.includes(tag)) { // ,, 입력시 태그 생성안하고 input value도 빈칸으로 지워버림. and 중복된 관심사 입력안되게
-                    document.querySelector('#interest').value = '';
+                    $('#interest').value = '';
                     return;
                 }
-                document.querySelector('#interest').insertAdjacentHTML('beforebegin', `<span class="interestTag">${tag}<span class="tagClose">x</span></span>`);
+                $('#interest').insertAdjacentHTML('beforebegin', `<span class="interestTag">${tag}<span class="tagClose">x</span></span>`);
                 tagTexts.push(tag)
                 //document.querySelector('.tags').insertAdjacentHTML += `<span class="interestTag">${tag}<span class="tagClose">x</span></span>`;
-                document.querySelector('#interest').value = '';
+                $('#interest').value = '';
                 allTags = document.querySelectorAll('span.interestTag');
                 allTags.forEach(tag => {
                     tag.addEventListener('click', (e) => {
@@ -277,7 +277,7 @@ function wrapInterest() {
                     userTyped += c;
                     if (c==='<') break;
                 }
-                document.querySelector('#interest').value = userTyped;
+                $('#interest').value = userTyped;
                 parent.removeChild(lastTag);
             }
         }
@@ -285,10 +285,10 @@ function wrapInterest() {
 function resetInputs() {
         const inputs = ['#id','#pw','#pw_confirm','#year','#month_list','#date_list','#email','#name', '#gender','#phone'];
         inputs.forEach(input => {
-            document.querySelector(input).value = '';
+            $(input).value = '';
         })
-        document.querySelector('.tags').innerHTML = '<input id="interest" type="text" placeholder="관심사 입력">';
-        document.querySelector('#interest').addEventListener('focus', (e) => {
+        $('.tags').innerHTML = '<input id="interest" type="text" placeholder="관심사 입력">';
+        $('#interest').addEventListener('focus', (e) => {
             wrapInterest();
         });
         if (window.scrollHeight - window.scrollTop === window.clientHeight)
@@ -300,9 +300,9 @@ function resetStates() {
         const inputStates = ['.idState','.pwState','.pwConfirmState','.phoneState','.emailState','.yearState','.interestState','.termState'];
         
         inputStates.forEach(state => {
-            document.querySelector(state).innerHTML = '';
+            $(state).innerHTML = '';
         })
-        document.querySelector('#agreed').checked = false;
+        $('#agreed').checked = false;
     }
 function register() {
         let errorMsgs = []
@@ -320,10 +320,10 @@ function register() {
             <span class="interestTag">음악x</span>
             <input id="interest" type="text" placeholder="관심사 입력"></input>
         `
-        document.querySelector("#agreed").checked = true;
+        $("#agreed").checked = true;
         // TEST END //
         
-        checkId(document.querySelector("#id").value);
+        checkId($("#id").value);
         checkPassword();
         checkIfPwTwin();
         checkYear();
@@ -331,19 +331,19 @@ function register() {
         checkPhone();
         checkInterestLength();
         checkTermAgreed();
-        if (checkId(document.querySelector("#id").value) && checkPassword() && checkIfPwTwin() && checkYear() && checkEmail() && checkPhone() && checkInterestLength() && checkTermAgreed()) {
+        if (checkId($("#id").value) && checkPassword() && checkIfPwTwin() && checkYear() && checkEmail() && checkPhone() && checkInterestLength() && checkTermAgreed()) {
     
             const userInterests = [];
             document.querySelectorAll('.interestTag').forEach(tag => {
                 userInterests.push(tag.textContent.slice(0,-1));
             })
             const user = {
-                id : document.querySelector("#id").value,
-                pw : document.querySelector("#pw").value,
-                name : document.querySelector("#name").value,
-                birthdate : [document.querySelector("#year").value, document.querySelector("#month_list").value, document.querySelector("#date_list").value],
-                email : document.querySelector("#email").value,
-                phone : document.querySelector("#phone").value,
+                id : $("#id").value,
+                pw : $("#pw").value,
+                name : $("#name").value,
+                birthdate : [$("#year").value, $("#month_list").value, $("#date_list").value],
+                email : $("#email").value,
+                phone : $("#phone").value,
                 interests : userInterests
             };
             const xhr = new XMLHttpRequest()
@@ -357,7 +357,7 @@ function register() {
         }
         else{ 
             inputStates.forEach(state => {
-                let target = document.querySelector(state);
+                let target = $(state);
                 if(target !== null && target.style.color==='red') {
                     errorMsgs.push(target.innerHTML)
                 }
@@ -366,16 +366,16 @@ function register() {
         }
     }
 
-document.querySelector("#popTerm").addEventListener('click', popTerm);
-document.querySelector("#popReset").addEventListener('click', popReset);
-document.querySelector("#register").addEventListener('click', register);
-document.querySelector("#resetInputs").addEventListener('click', resetInputs);
-document.querySelector("#closeReset").addEventListener('click', closeReset);
-document.querySelector("#closeTerm").addEventListener('click', closeTerm);
-document.querySelector("#agree").addEventListener('click', userAgreed);
+$("#popTerm").addEventListener('click', popTerm);
+$("#popReset").addEventListener('click', popReset);
+$("#register").addEventListener('click', register);
+$("#resetInputs").addEventListener('click', resetInputs);
+$("#closeReset").addEventListener('click', closeReset);
+$("#closeTerm").addEventListener('click', closeTerm);
+$("#agree").addEventListener('click', userAgreed);
 setTermContent();
 generateMonth()
-document.querySelector('#id').addEventListener('focusout', () => {
+$('#id').addEventListener('focusout', () => {
     let data = {
         'id' : `${document.querySelector("#id").value}`
     }
@@ -385,18 +385,18 @@ document.querySelector('#id').addEventListener('focusout', () => {
     xhr.send(JSON.stringify(data));
     const setExistId = async() => {
         (await xhr.response === 'no') ? existId = true : existId = false
-        checkId(document.querySelector("#id").value)
+        checkId($("#id").value)
     }
     xhr.addEventListener('load', setExistId)
 });
-document.querySelector('#pw').addEventListener('focusout',checkPassword);
-document.querySelector('#pw_confirm').addEventListener('focusout', checkIfPwTwin);
-document.querySelector('#year').addEventListener('focusout', checkYear);
-document.querySelector('#month_list').addEventListener('keyup', generateDate);
-document.querySelector('#email').addEventListener('focusout', checkEmail);
-document.querySelector('#phone').addEventListener('focusout', checkPhone);
-document.querySelector('#termscroll').addEventListener('scroll', (e) => {
-    checkScrolled(document.querySelector('#termscroll'));
+$('#pw').addEventListener('focusout',checkPassword);
+$('#pw_confirm').addEventListener('focusout', checkIfPwTwin);
+$('#year').addEventListener('focusout', checkYear);
+$('#month_list').addEventListener('keyup', generateDate);
+$('#email').addEventListener('focusout', checkEmail);
+$('#phone').addEventListener('focusout', checkPhone);
+$('#termscroll').addEventListener('scroll', (e) => {
+    checkScrolled($('#termscroll'));
 });
-document.querySelector('#interest').addEventListener('focus', wrapInterest);
-document.querySelector('#interest').addEventListener('focusout', checkInterestLength);
+$('#interest').addEventListener('focus', wrapInterest);
+$('#interest').addEventListener('focusout', checkInterestLength);
