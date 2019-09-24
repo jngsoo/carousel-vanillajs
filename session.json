@@ -1,0 +1,302 @@
+{
+  "admin": {
+    "id": "admin",
+    "pw": "admin",
+    "name": "관리자",
+    "birthdate": [
+      "1994",
+      "3",
+      "29"
+    ],
+    "sessionCookie": "admin"
+  },
+  "fdef1c40-d2cf-11e9-b04b-fd58173324ae": {
+    "id": "jngsoo",
+    "pw": "@Shin1234",
+    "name": "JEONGSOO",
+    "birthdate": [
+      "1994",
+      "3월",
+      "29일"
+    ],
+    "email": "wt2933@icloud.com",
+    "phone": "01012349876",
+    "interests": [
+      "이거",
+      "저거",
+      "저것"
+    ],
+    "sessionCookie": "fdef1c40-d2cf-11e9-b04b-fd58173324ae"
+  },
+  "3da9f340-deac-11e9-a889-5952cc3e4749": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "3da9f340-deac-11e9-a889-5952cc3e4749"
+  },
+  "5b088980-deaf-11e9-bbaf-bfb16b804a46": {
+    "id": "hungry",
+    "pw": "@Shin1234",
+    "name": "정수정수",
+    "birthdate": [
+      "1994",
+      "3월",
+      "29일"
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053772933",
+    "interests": [
+      "여행",
+      "음악",
+      "독서",
+      "영화"
+    ],
+    "sessionCookie": "5b088980-deaf-11e9-bbaf-bfb16b804a46"
+  },
+  "cc6ba300-deaf-11e9-861a-5b1f134d78b2": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "cc6ba300-deaf-11e9-861a-5b1f134d78b2"
+  },
+  "f816aef0-deaf-11e9-ab9c-97023b424a08": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "f816aef0-deaf-11e9-ab9c-97023b424a08"
+  },
+  "08b26470-deb0-11e9-8a17-01f5c9b2fea8": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "08b26470-deb0-11e9-8a17-01f5c9b2fea8"
+  },
+  "250dc2e0-deb0-11e9-b2f7-3930ccbcd1b0": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "250dc2e0-deb0-11e9-b2f7-3930ccbcd1b0"
+  },
+  "43a8b110-deb0-11e9-a380-9f18aa70b3cf": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "43a8b110-deb0-11e9-a380-9f18aa70b3cf"
+  },
+  "53836080-deb0-11e9-9b30-b15af24c9b31": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "53836080-deb0-11e9-9b30-b15af24c9b31"
+  },
+  "6db88390-deb0-11e9-bd6b-9bbd2f5b4285": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "6db88390-deb0-11e9-bd6b-9bbd2f5b4285"
+  },
+  "84b7a8f0-deb0-11e9-a1ad-1172011aa182": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "84b7a8f0-deb0-11e9-a1ad-1172011aa182"
+  },
+  "9f09f0f0-deb0-11e9-bec5-5b644954b5d3": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "9f09f0f0-deb0-11e9-bec5-5b644954b5d3"
+  },
+  "0e6ad1d0-deb1-11e9-b250-7fb2e47c2fca": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "0e6ad1d0-deb1-11e9-b250-7fb2e47c2fca"
+  },
+  "405523d0-deb1-11e9-a2f6-7fac7c566f5d": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "405523d0-deb1-11e9-a2f6-7fac7c566f5d"
+  },
+  "ba91a250-dec9-11e9-a2f6-7fac7c566f5d": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "ba91a250-dec9-11e9-a2f6-7fac7c566f5d"
+  },
+  "b5f03850-deca-11e9-a09d-452d0cc678a3": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "b5f03850-deca-11e9-a09d-452d0cc678a3"
+  }
+}
