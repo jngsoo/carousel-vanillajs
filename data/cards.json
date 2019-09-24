@@ -1,0 +1,33 @@
+[
+    {   
+        "img" : "https://img.icons8.com/cotton/64/000000/cardboard-box--v1.png",
+        "title" : "Ship",
+        "category-color" : "#e6e600",
+        "slides" : 3
+    },
+    {   
+        "img" : "https://img.icons8.com/ios/50/000000/video.png",
+        "title" : "Stream",
+        "category-color" : "#faa",
+        "slides" : 4
+        
+    },
+    {   
+        "img" : "https://img.icons8.com/wired/64/000000/shopping.png",
+        "title" : "Shop",
+        "category-color" : " #1affc2",
+        "slides" : 3
+    },
+    {   
+        "img" : "https://img.icons8.com/dotty/80/000000/reading-ebook.png",
+        "title" : "Read",
+        "category-color" : "#1a8cff",
+        "slides" : 2
+    },
+    {   
+        "img" : "https://img.icons8.com/pastel-glyph/64/000000/plus.png",
+        "title" : "More",
+        "category-color" : "#9999ff",
+        "slides" : 2
+    }
+]
