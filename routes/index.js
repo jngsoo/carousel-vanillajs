@@ -1,28 +1,25 @@
-var express = require('express');
-var router = express.Router();
-const util = require('../util/server.util')
+const express = require('express')
+const session = require('express-session')   
+const RedisStore = require('connect-redis')(session)        
+const router = express.Router()
 const carouselData = require('../data/carousel.json')
-const uuidv1 = require('uuid/v1')
 const sessionDB = require('../sessionDB')
+const uuidv1 = require('uuid/v1')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let userCookie = util.getCookie(req)
-  if(util.checkLogin(req,sessionDB)) {     // 자동 로그인
-      console.log('Welcome!!')
+  console.log(req.session.id)
+  if(req.session) { // 로그인 화면 뿌리기
       res.render('index', {
-        user : `${sessionDB.get(`${userCookie.sessionCookie}`).value().name}`,
-        carouselData : carouselData
+        user: req.session,
+        carouselData: carouselData
       })
   }
   else {
-      // client 측에 sessionCookie가 없을때만 sessionCookie 제공
-      console.log('not logged in!!')
-      if (!userCookie.sessionCookie) res.cookie("sessionCookie", uuidv1())
-      res.render('index', {
-        user : null,
-        carouselData : carouselData
-      })
+    res.render('index', {
+        user: null,
+        carouselData: carouselData
+    })
   }
 })
 

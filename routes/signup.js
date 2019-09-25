@@ -23,9 +23,9 @@ router.post('/', function (req, res) {
         let userInfo = JSON.parse(bodyStr)
         userInfo.sessionCookie = userCookie.sessionCookie   // userInfo 에 user의 sessionCookie 값을 추가
         
-        sessionDB
-        .set(userCookie.sessionCookie, userInfo)
-        .write()
+        // sessionDB
+        // .set(userCookie.sessionCookie, userInfo)
+        // .write()
 
 
         sql.connect();

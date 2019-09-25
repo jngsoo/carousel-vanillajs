@@ -1,15 +1,103 @@
 var createError = require('http-errors');
 var express = require('express');
+const session = require('express-session')   
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require("body-parser");
 
 var indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login')
 const signUpRouter = require('./routes/signup');
 var usersRouter = require('./routes/users');
 
-var app = express();
+const sessionDB = require('./sessionDB')
+const sql = require('./sql')
+
+const TWO_HOURS = 1000 * 60 * 60 * 2
+const {
+  NODE_ENV = 'dev',
+  SESS_LIFETIME = TWO_HOURS
+} = process.env
+
+
+var app = express()
+
+app.use(session({
+  key: 'sid',
+  secret: 'sseeccrreett',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+      maxAge: SESS_LIFETIME
+  }
+}))
+
+const passport = require('passport')
+const LocalStrategy = require('passport-local').Strategy
+
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(bodyParser.urlencoded({ extended: false }));
+
+function cb(username, password, done) {
+  sql.query(
+    `
+    SELECT * FROM users where id='${username}';
+    `, 
+    function (error, results, fields) {
+      if(error) {   // Invalid ID
+        console.log('error')
+      } 
+      else {
+        const userInfo = results[0]
+        if(userInfo===undefined) {  // Invalid ID
+          console.log('ID WRONG')
+          return done(null, false, { message: 'Incorrect username'})
+        }
+        if(userInfo.pw.trim() !== password.trim()) {  // Invalid Password
+          console.log('PW WRONG')
+          return done(null, false, { message: 'Incorrect password.' });
+        }
+        return done(null, results[0])
+      }
+    }
+  )
+}
+
+passport.use(new LocalStrategy({
+    usernameField: 'id',
+    passwordField: 'pw'
+  },cb))
+
+passport.serializeUser(function(user, done) {
+  console.log('serials id', user)
+  done(null, user);
+});
+
+passport.deserializeUser(function(id, done) {
+  console.log('deserials serials id', id)
+  done(null, id)
+});
+
+app.get('/login', function(req,res,next) {
+  res.render('login')
+})
+
+app.post('/login',
+  passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login'
+  })
+)
+
+app.post('/login/logout',function(req,res,next) {
+  req.session.destroy()
+  res.clearCookie('sid')
+  res.send('logout')
+})
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +110,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/login', loginRouter)
+// app.use('/login', loginRouter)
 app.use('/sign_up', signUpRouter)
 app.use('/users', usersRouter);
 
@@ -42,4 +130,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = app
