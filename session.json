@@ -298,5 +298,23 @@
       "음악"
     ],
     "sessionCookie": "b5f03850-deca-11e9-a09d-452d0cc678a3"
+  },
+  "9f6dc360-ded2-11e9-89fe-4969bcebd00f": {
+    "id": "iamtester",
+    "pw": "@Shin1234",
+    "name": "Tester",
+    "birthdate": [
+      "1994",
+      "",
+      ""
+    ],
+    "email": "wt2933@naver.com",
+    "phone": "01053762933",
+    "interests": [
+      "여행",
+      "독서",
+      "음악"
+    ],
+    "sessionCookie": "9f6dc360-ded2-11e9-89fe-4969bcebd00f"
   }
 }
