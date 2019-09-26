@@ -14,13 +14,11 @@ const getCarouselData = () => {
           SELECT * FROM ${card.title.toLowerCase()}
       `)
   })
-  console.log(carousel_json_data)
   return carousel_json_data
 }
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log('====req.user===',req.user)
   const carouselData = getCarouselData()
   if(req.user) { // 로그인 화면 뿌리기
       res.render('index', {
