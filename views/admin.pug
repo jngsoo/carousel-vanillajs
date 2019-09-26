@@ -1,0 +1,28 @@
+extends layout
+
+block content
+//-   .card-container
+//-       each card in carouselData
+//-         .card(style=`background-color: ${card['category_color']};`)
+//-           img(src=`${card['img']}`)
+//-           h3 #{card['title']}
+//-           span
+//-             each carousel in card['carousel']
+//-               .dot
+//-   .slide-container
+//-     a.prev &#10094;
+//-     .slide
+//-       ul.carousel-container
+//-         each card in carouselData
+//-           each carousel in card['carousel']
+//-             li
+//-               img.carousel-image(src=`${carousel['img']}`)
+//-               .article-container
+//-                 article.carousel-article(aria-hidden="true")
+//-                   span(style=`${carousel['category-color']}`)
+//-                   h1 #{carousel['title']}
+//-                   p #{carousel['content']}
+//-                   a.anchor(href=`${carousel['detail_href']}` target="_blank") #{carousel['detail_comment']}
+//-     a.next &#10095;
+//-   script
+//-     include ../public/javascripts/index.mjs 

@@ -310,7 +310,7 @@ function register() {
         
         // FOR TEST //
         const inputs = ['#id','#pw','#pw_confirm','#year','#month_list','#date_list','#email','#name', '#gender','#phone'];
-        const testUserInfo = ['hohoho','@Shin1234','@Shin1234','1994','3','29','wt2933@naver.com','coco','남성','01053762933'];
+        const testUserInfo = ['gohome','@Shin1234','@Shin1234','1994','3','29','wt2933@naver.com','zipzip','남성','01053762933'];
         for(let i=0; i<inputs.length; i++) {
             $(inputs[i]).value = testUserInfo[i];
         }

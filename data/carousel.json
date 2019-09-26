@@ -86,7 +86,7 @@
                 "category_name" : "PRIME AT WHOLE FOODS MARKET",
                 "category-color" : "#1affc2",
                 "title" : "Our healthiest benefit yet",
-                "content" : "Exclusive savings for Prime members in all US stores, 5% Back for eligible Prime members with the Amazon Prime Rewards Visa Card, and 2-hour delivery with Prime Now in select cities (more soon)",
+                "content" : "Exclusive savings for Prime members in all US stores, 5% Back for eligible Prime members with the Amazon Prime Rewards Visa Card.",
                 "detail_comment" : "Explore Prime at Whole Foods ▸",
                 "detail_href" : "http://www.google.com"
             },
@@ -112,7 +112,7 @@
     },
     {   
         "img" : "https://img.icons8.com/dotty/80/000000/reading-ebook.png",
-        "title" : "Read",
+        "title" : "Reading",
         "category-color" : "#1a8cff",
         "carousel" : [         
             {
@@ -120,7 +120,7 @@
                 "category_name" : "PRIME READING",
                 "category-color" : "#1a8cff",
                 "title" : "Prime members read free",
-                "content" : "As a Prime member, you can now read as much as you like from over a thousand top Kindle books, magazines, short works, books with Audible narration, comics, children's books and more—all at no additional cost.",
+                "content" : "As a Prime member, you can now read as much as you like from over a thousand top Kindle books, magazines, short works, books with Audible narration, comics, children books and more—all at no additional cost.",
                 "detail_comment" : "Explore Prime Reading ▸",
                 "detail_href" : "http://www.google.com"
             },
@@ -128,8 +128,8 @@
                 "img" : "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80",
                 "category_name" : "AMAZON FIRST READS",
                 "category-color" : "#1a8cff",
-                "title" : "Read next month's new releases today",
-                "content" : "Each month, Prime members can download one editors' pick for free--before the official publication date. Downloaded titles are yours to keep.",
+                "title" : "Read next months new releases today",
+                "content" : "Each month, Prime members can download one editors pick for free--before the official publication date. Downloaded titles are yours to keep.",
                 "detail_comment" : "Learn more about Amazon First Reads ▸",
                 "detail_href" : "http://www.google.com"
             }

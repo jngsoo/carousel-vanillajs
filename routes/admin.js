@@ -5,7 +5,9 @@ const util = require('../util/server.util')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     if(util.checkAdminAuthority(req)) {   // admin 권한 check 
-        res.send('this is admin page');
+        res.render('admin',{
+            user: req.user.name
+        });
     }
     res.redirect('/')
 });

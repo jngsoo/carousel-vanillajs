@@ -3,7 +3,7 @@ extends layout
 block content
   .card-container
       each card in carouselData
-        .card(style=`background-color: ${card['category-color']};`)
+        .card(style=`background-color: ${card['category_color']};`)
           img(src=`${card['img']}`)
           h3 #{card['title']}
           span

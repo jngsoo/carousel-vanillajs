@@ -46,28 +46,18 @@ app.use(passport.session())
 app.use(bodyParser.urlencoded({ extended: false }));
 
 function cb(username, password, done) {
-  sql.query(
-    `
-    SELECT * FROM users where id='${username}';
-    `, 
-    function (error, results, fields) {
-      if(error) {   // Invalid ID
-        console.log('error')
-      } 
-      else {
-        const userInfo = results[0]
-        if(userInfo===undefined) {  // Invalid ID
-          console.log('ID WRONG')
-          return done(null, false, { message: 'Incorrect username'})
-        }
-        if(userInfo.pw.trim() !== password.trim()) {  // Invalid Password
-          console.log('PW WRONG')
-          return done(null, false, { message: 'Incorrect password.' });
-        }
-        return done(null, results[0])
+      let userInfo = sql.query(`SELECT * FROM users where id='${username}';`)
+      console.log(userInfo)
+      if(userInfo.length===0) {  // Invalid ID
+        console.log('ID WRONG')
+        return done(null, false, { message: 'Incorrect username'})
       }
-    }
-  )
+      if(userInfo[0].pw.trim() !== password.trim()) {  // Invalid Password
+        console.log('PW WRONG')
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, userInfo[0])
+
 }
 
 passport.use(new LocalStrategy({

@@ -30,11 +30,7 @@ router.post('/', function (req, res) {
         INSERT INTO users
         VALUES 
         ('12345', '${userInfo.id}', '${userInfo.pw}', '${userInfo.name}', '${userInfo.birthdate[0]}', '${userInfo.email}', '${userInfo.phone}', '${userInfo.interests[0]}', 'false')
-        `, 
-        function (error, results, fields) {
-            if (error) throw error;
-            console.log(results)
-        });
+        `)
         // sql.end();
 
         
