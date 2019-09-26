@@ -20,13 +20,23 @@ module.exports = {
      * @param {*} req  user request
      * @param {*} DB user info Database ( uuid(key) : {userinfos...}(value) )
      */
-    checkLogin(req, DB) {
-        let userCookie = this.getCookie(req)
-        if(DB.get(`${userCookie.sessionCookie}`).value()) {
+    checkLogin(req) {
+        if(req.user) {
             return true
         }
         return false
+    },
+    /**
+     * 접속한 유저의 admin 권한을 확인하는 함수
+     * @param {*} req user request
+     */
+    checkAdminAuthority(req) {
+        if(req.user === undefined || req.user.admin==='false') {   // admin 권한이 없으면 redirect to root
+            return false
+        }
+        return true
     }
+
 }
 
 

@@ -310,7 +310,7 @@ function register() {
         
         // FOR TEST //
         const inputs = ['#id','#pw','#pw_confirm','#year','#month_list','#date_list','#email','#name', '#gender','#phone'];
-        const testUserInfo = ['iamtester','@Shin1234','@Shin1234','1994','3','29','wt2933@naver.com','Tester','남성','01053762933'];
+        const testUserInfo = ['hohoho','@Shin1234','@Shin1234','1994','3','29','wt2933@naver.com','coco','남성','01053762933'];
         for(let i=0; i<inputs.length; i++) {
             $(inputs[i]).value = testUserInfo[i];
         }
@@ -346,12 +346,12 @@ function register() {
                 phone : $("#phone").value,
                 interests : userInterests
             };
-            const xhr = new XMLHttpRequest()
-            xhr.open("POST", 'sign_up', true)
-            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8"')
-            xhr.send(JSON.stringify(user))
-            xhr.addEventListener('load', () => {
-                location.replace('/')
+            const registerRequest = new XMLHttpRequest()
+            registerRequest.open("POST", 'sign_up', true)
+            registerRequest.setRequestHeader('Content-Type', 'application/json;charset=UTF-8"')
+            registerRequest.send(JSON.stringify(user))
+            registerRequest.addEventListener('load', () => {
+                location.replace('/login')
             })
             
         }

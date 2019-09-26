@@ -1,15 +1,18 @@
 var createError = require('http-errors');
 var express = require('express');
 const session = require('express-session')   
+var FileStore = require('session-file-store')(session);
+
 
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var bodyParser = require("body-parser");
+var bodyParser = require("body-parser"); 
 
 var indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login')
 const signUpRouter = require('./routes/signup');
+const adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 
 const sessionDB = require('./sessionDB')
@@ -29,6 +32,7 @@ app.use(session({
   secret: 'sseeccrreett',
   resave: false,
   saveUninitialized: true,
+  store: new FileStore,
   cookie: {
       maxAge: SESS_LIFETIME
   }
@@ -72,31 +76,12 @@ passport.use(new LocalStrategy({
   },cb))
 
 passport.serializeUser(function(user, done) {
-  console.log('serials id', user)
   done(null, user);
 });
 
 passport.deserializeUser(function(id, done) {
-  console.log('deserials serials id', id)
   done(null, id)
 });
-
-app.get('/login', function(req,res,next) {
-  res.render('login')
-})
-
-app.post('/login',
-  passport.authenticate('local', {
-      successRedirect: '/',
-      failureRedirect: '/login'
-  })
-)
-
-app.post('/login/logout',function(req,res,next) {
-  req.session.destroy()
-  res.clearCookie('sid')
-  res.send('logout')
-})
 
 
 // view engine setup
@@ -110,8 +95,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.use('/login', loginRouter)
+app.use('/login', loginRouter)
 app.use('/sign_up', signUpRouter)
+app.use('/admin', adminRouter)
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

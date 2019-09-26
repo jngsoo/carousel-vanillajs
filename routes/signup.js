@@ -6,7 +6,7 @@ const sessionDB = require('../sessionDB')
 const sql = require('../sql')
 
 router.get('/', function (req, res) {
-    if(util.checkLogin(req, sessionDB)) {     // home redirect
+    if(util.checkLogin(req)) {     // home redirect
         res.redirect('/')
     }
     let userCookie = util.getCookie(req)    
@@ -21,24 +21,21 @@ router.post('/', function (req, res) {
     })
     req.on("end",function(){
         let userInfo = JSON.parse(bodyStr)
+        userInfo.admin = 'false'
         userInfo.sessionCookie = userCookie.sessionCookie   // userInfo 에 user의 sessionCookie 값을 추가
-        
-        // sessionDB
-        // .set(userCookie.sessionCookie, userInfo)
-        // .write()
+    
 
-
-        sql.connect();
+        // sql.connect();
         sql.query(`
         INSERT INTO users
         VALUES 
-        ('12345', '${userInfo.id}', '${userInfo.pw}', '${userInfo.name}', '${userInfo.birthdate[0]}', '${userInfo.email}', '${userInfo.phone}', '${userInfo.interests[0]}')
+        ('12345', '${userInfo.id}', '${userInfo.pw}', '${userInfo.name}', '${userInfo.birthdate[0]}', '${userInfo.email}', '${userInfo.phone}', '${userInfo.interests[0]}', 'false')
         `, 
         function (error, results, fields) {
             if (error) throw error;
             console.log(results)
         });
-        sql.end();
+        // sql.end();
 
         
         console.log("NEW User Registered!")

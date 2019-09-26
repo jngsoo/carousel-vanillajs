@@ -8,10 +8,10 @@ const uuidv1 = require('uuid/v1')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log(req.session.id)
-  if(req.session) { // 로그인 화면 뿌리기
+  console.log('====req.user===',req.user)
+  if(req.user) { // 로그인 화면 뿌리기
       res.render('index', {
-        user: req.session,
+        user: req.user.name,
         carouselData: carouselData
       })
   }
