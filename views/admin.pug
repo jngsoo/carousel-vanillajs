@@ -33,6 +33,40 @@ block content
               else
                 input(class="admin" name='adminbox' type="checkbox")
     button(class="admin-btn" type="submit") 관리자 권한 수정
+  div.admin-container
+    table.table.table-hover.w-75
+      thead
+        tr
+          th(scope='col') 이미지
+          th(scope='col') 제목
+          th(scope='col') 카드 색상
+
+      tbody
+        each card in cardsData
+          tr
+            th.userid(scope='row') #{card.img}
+            td #{card.title}
+            td #{card.category_color}
+
+  //- div.admin-container
+  //-   table.table.table-hover.w-75
+  //-     thead
+  //-       tr
+  //-         th(scope='col') 이미지
+  //-         th(scope='col') 카테고리 이름
+  //-         th(scope='col') 카테고리 색상
+  //-         th(scope='col') 제목
+  //-         th(scope='col') 내용
+  //-         th(scope='col') 링크 제목
+  //-         th(scope='col') 링크 주소
+
+  //-     tbody
+  //-       each slide in carouselData
+  //-         tr
+  //-           th.userid(scope='row') #{slide.img}
+  //-           td #{slide.category_name}
+  //-           td #{slide.category_color}
+           
   script
     include ../public/javascripts/admin.mjs 
   script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")

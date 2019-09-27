@@ -6,10 +6,14 @@ const sql = require('../sql')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     if(util.checkAdminAuthority(req)) {   // admin 권한 check 
+        let carouselData = sql.query(`SELECT * FROM ship,shop`)
+        let allCardsData = sql.query(`SELECT * FROM cards_data`)
         let allUserData = sql.query(`SELECT id,name,birthdate,email,phone,interests,admin FROM users`)
         res.render('admin',{
             user: req.user.name,
-            usersData: allUserData
+            usersData: allUserData,
+            cardsData: allCardsData,
+            carouselData: carouselData
         });
         return res.end()   // https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client
     }
