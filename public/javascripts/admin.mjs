@@ -28,7 +28,7 @@ const queryAdminChange = () => {
     // console.log(adminCheckedUsers)
     postData('/admin', {adminUsers: adminCheckedUsers}).then( (data) => {
         alert(`${data}\n 관리자 설정 완료`)
-        // location.replace('/admin')
+        location.replace('/admin')
     })
   
 }

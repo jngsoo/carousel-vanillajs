@@ -309,18 +309,18 @@ function register() {
         const inputStates = ['.idState','.pwState','.pwConfirmState','.phoneState','.emailState','.yearState','.interestState','.termState'];
         
         // FOR TEST //
-        const inputs = ['#id','#pw','#pw_confirm','#year','#month_list','#date_list','#email','#name', '#gender','#phone'];
-        const testUserInfo = ['hohoho','@Shin1234','@Shin1234','1994','3','29','wt2933@naver.com','coco','남성','01053762933'];
-        for(let i=0; i<inputs.length; i++) {
-            $(inputs[i]).value = testUserInfo[i];
-        }
-        $('.tags').innerHTML = `
-            <span class="interestTag">여행x</span>
-            <span class="interestTag">독서x</span>
-            <span class="interestTag">음악x</span>
-            <input id="interest" type="text" placeholder="관심사 입력"></input>
-        `
-        $("#agreed").checked = true;
+        // const inputs = ['#id','#pw','#pw_confirm','#year','#month_list','#date_list','#email','#name', '#gender','#phone'];
+        // const testUserInfo = ['admin','admin','admin','1994','3','29','abcde@naver.com','관리자','남성','01053762933'];
+        // for(let i=0; i<inputs.length; i++) {
+        //     $(inputs[i]).value = testUserInfo[i];
+        // }
+        // $('.tags').innerHTML = `
+        //     <span class="interestTag">독서</span>
+        //     <span class="interestTag">여행</span>
+        //     <span class="interestTag">음악x</span>
+        //     <input id="interest" type="text" placeholder="관심사 입력"></input>
+        // `
+        // $("#agreed").checked = true;
         // TEST END //
         
         checkId($("#id").value);

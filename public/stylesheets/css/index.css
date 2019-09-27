@@ -35,13 +35,13 @@ body {
 
 .navbar > .right {
   display: flex;
-  margin-left: 80%; }
+  margin-left: 75%; }
 
 .navbar > .right > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 5rem;
+  width: 6rem;
   height: 2rem;
   margin-right: 1rem;
   border-radius: 1rem;
@@ -54,6 +54,18 @@ body {
 .navbar > .right > a:hover {
   text-decoration: none;
   cursor: pointer; }
+
+input[type=submit] {
+  border: solid 0.05rem lightgray;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  color: gray;
+  padding: 0.4rem;
+ }
+ input[type=submit]:hover {
+  text-decoration: none;
+  cursor: pointer; 
+ }
 
 .slide-container {
   display: flex;
