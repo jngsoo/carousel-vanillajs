@@ -15,7 +15,6 @@ const signUpRouter = require('./routes/signup');
 const adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 
-const sessionDB = require('./sessionDB')
 const sql = require('./sql')
 
 const TWO_HOURS = 1000 * 60 * 60 * 2

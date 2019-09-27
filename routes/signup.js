@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const util = require('../util/server.util')
 const uuidv1 = require('uuid/v1')
-const sessionDB = require('../sessionDB')
 const sql = require('../sql')
 
 router.get('/', function (req, res) {
@@ -48,7 +47,8 @@ router.post('/check', function (req, res) {
     })
     req.on("end",function(){    // send('ok) if userId is unique. Else send('no') (cannot use that id)
         userInfo = JSON.parse(bodyStr)
-        sessionDB.find({ id : `${userInfo.id}`}).value() ? res.send('no') : res.send('ok')
+        res.send('ok')
+        // sessionDB.find({ id : `${userInfo.id}`}).value() ? res.send('no') : res.send('ok')
     })
 })
 
