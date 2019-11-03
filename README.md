@@ -4,18 +4,13 @@
 
 
 
-### Demo http://106.10.52.220:3000/
+### Demo http://220.230.118.56:4321/
 
 
 
-### Admin 계정
-
-- ID : `admin`
-
-- PW : `admin`
+### 로그인 기능 헌재 중단
 
   
-
 ### Carousel UI
 
 ![](https://i.imgur.com/RRmv1SE.png)
