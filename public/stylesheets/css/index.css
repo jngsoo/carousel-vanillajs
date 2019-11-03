@@ -88,7 +88,7 @@ input[type=submit] {
     border-color: green; }
   .slide li {
     display: flex;
-    width: calc(100% / 4); }
+    width: calc(100% / 14); }
 
 .carousel-image {
   height: 15rem;

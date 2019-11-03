@@ -10,7 +10,7 @@
                 "category-color" : "#e6e600",
                 "title" : "Fast, FREE delivery on over 100 million items",
                 "content" : "Super-fast delivery, tens of millions of items, and flexible delivery options to fit your life. Plus, Prime members get FREE One-Day Delivery on tens of millions of items.",
-                "detail_comment" : "Explore Prime Delivery",
+                "detail_comment" : "Explore Prime Delivery ▸",
                 "detail_href" : "http://www.google.com"
             },
             {
@@ -19,7 +19,7 @@
                 "category-color" : "#e6e600",
                 "title" : "FREE Same-Day Delivery",
                 "content" : "Prime members get FREE Same-Day Delivery on over three million items with qualifying orders.",
-                "detail_comment" : "Explore Same-Day Delivery",
+                "detail_comment" : "Explore Same-Day Delivery ▸",
                 "detail_href" : "http://www.google.com"
             },
             {
@@ -28,7 +28,7 @@
                 "category-color" : "#e6e600",
                 "title" : "Skip the lines and get it on release day",
                 "content" : "No more waiting in line! Choose Free Release-Date Delivery at checkout on qualified items, and your package will be delivered on the release day by 7pm.",
-                "detail_comment" : "Explore Release-Date Delivery d",
+                "detail_comment" : "Explore Release-Date Delivery ▸",
                 "detail_href" : "http://www.google.com"
             }
         ]
