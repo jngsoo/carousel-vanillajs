@@ -82,7 +82,7 @@ input[type=submit] {
     padding: 0;
     height: 20rem;
     margin-left: 0;
-    width: calc(100% * 4);
+    width: calc(100% * 14);
     display: flex;
     border: hidden;
     border-color: green; }

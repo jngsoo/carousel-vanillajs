@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
         return res.end()   // https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client
     }
     return res.redirect('/')
+
 });
 
 router.post('/', function(req, res, next) {

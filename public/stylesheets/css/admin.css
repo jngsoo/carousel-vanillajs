@@ -10,6 +10,9 @@
     color: gray;
     border-radius: 1rem;
 }
+.admin-container > h1 {
+    margin: auto;
+}
 
 .admin-container > table {
     margin: auto;

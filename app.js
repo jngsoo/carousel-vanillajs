@@ -48,11 +48,9 @@ function cb(username, password, done) {
       let userInfo = sql.query(`SELECT * FROM users where id='${username}';`)
       console.log(userInfo)
       if(userInfo.length===0) {  // Invalid ID
-        console.log('ID WRONG')
         return done(null, false, { message: 'Incorrect username'})
       }
       if(userInfo[0].pw.trim() !== password.trim()) {  // Invalid Password
-        console.log('PW WRONG')
         return done(null, false, { message: 'Incorrect password.' });
       }
       return done(null, userInfo[0])
